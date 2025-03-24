@@ -6,6 +6,7 @@ from .views import custom_logout
 urlpatterns = [
     path('',views.get_home),
     path('order/',views.get_order),
+    path('profile/',views.update_profile),
     path('guide/',views.get_guide),
     path('contact/',views.get_contact),
     path('product/',views.get_product),

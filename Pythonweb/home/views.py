@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import RegistrationForm
+from .forms import UserUpdateForm
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout
 from django.shortcuts import redirect
@@ -27,3 +28,14 @@ def get_register(request):
 def custom_logout(request):
     logout(request)
     return redirect('/') 
+
+def update_profile(request):
+    if request.method == "POST":
+        form = UserUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/profile')  # Chuyển hướng sau khi cập nhật
+    else:
+        form = UserUpdateForm(instance=request.user)
+    
+    return render(request, 'page1/profile.html', {'form': form})

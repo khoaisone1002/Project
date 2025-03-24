@@ -12,7 +12,7 @@
 
     <!-- STYLESHEET -->
     
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base1.css' %}">
     {% block  head %}{% endblock %}
     <title>Sidebar</title>
   </head>
@@ -22,15 +22,17 @@
         <!-- Bắt đầu phần slidebar-->
         <div class="slidebar">
             <div class="head">
-                <div class="user-img">
-                    <img src="{% static 'images/PTIT.png' %}" alt="">
-                </div>
-                <div class="user-details">
-                    {%if user.username %}
-                        <p class="title"> Xin chào </p>
-                        <p class="name"> {{user.username}} </p>
-                    {%endif%}
-                </div>
+                <a class = "information" href="/profile">
+                    <div class="user-img">
+                        <img src="{% static 'images/PTIT.png' %}" alt="">
+                    </div>
+                    <div class="user-details">
+                        {%if user.username %}
+                            <p class="title"> Xin chào </p>
+                            <p class="name"> {{user.last_name}} {{user.first_name}} </p>
+                        {%endif%}
+                    </div>
+                </a>
             </div>
             <div class="nav">
                 <div class="menu">
