@@ -1,0 +1,59 @@
+{% extends "page1/base.html" %}
+{% load static %}
+{% block title %}Guide{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/guide1.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="guide">
+    <div class="guide-container">
+        <h2>📌 Hướng Dẫn Sử Dụng Trang Web</h2>
+        
+        <div class="guide-section">
+            <h3>🏠 1. Trang Chủ</h3>
+            <p>Trang chủ hiển thị thông tin tổng quan và các thông báo quan trọng từ hệ thống.</p>
+        </div>
+
+        <div class="guide-section">
+            <h3>📦 2. Quản Lý Đơn Hàng</h3>
+            <p>Trong mục "Đơn Hàng", bạn có thể:</p>
+            <ul>
+                <li>Xem danh sách các đơn hàng.</li>
+                <li>Kiểm tra trạng thái đơn hàng.</li>
+                <li>Cập nhật thông tin đơn hàng.</li>
+            </ul>
+        </div>
+
+        <div class="guide-section">
+            <h3>🛒 3. Quản Lý Sản Phẩm</h3>
+            <p>Chức năng "Sản Phẩm" giúp bạn:</p>
+            <ul>
+                <li>Thêm, chỉnh sửa hoặc xóa sản phẩm.</li>
+                <li>Xem thông tin chi tiết từng sản phẩm.</li>
+            </ul>
+        </div>
+
+        <div class="guide-section">
+            <h3>📖 4. Xem Hướng Dẫn</h3>
+            <p>Trang "Hướng Dẫn" giúp bạn nắm rõ cách sử dụng hệ thống.</p>
+        </div>
+
+        <div class="guide-section">
+            <h3>📞 5. Liên Hệ</h3>
+            <p>Chức năng này hiển thị thông tin liên hệ và hỗ trợ khách hàng.</p>
+        </div>
+
+        <div class="guide-section">
+            <h3>🔍 6. Tìm Kiếm</h3>
+            <p>Sử dụng thanh tìm kiếm phía trên để tra cứu nhanh sản phẩm hoặc đơn hàng.</p>
+        </div>
+
+        <div class="guide-section">
+            <h3>🚪 7. Đăng Xuất</h3>
+            <p>Nhấn vào "Đăng Xuất" để thoát khỏi hệ thống một cách an toàn.</p>
+        </div>
+    </div>
+</div>
+{% endblock  %}

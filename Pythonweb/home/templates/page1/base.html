@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block  title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ICONS -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- STYLESHEET -->
+    
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block  head %}{% endblock %}
+    <title>Sidebar</title>
+  </head>
+  <body>
+    <!-- Jquery -->
+    <div class="container">
+        <!-- Bắt đầu phần slidebar-->
+        <div class="slidebar">
+            <div class="head">
+                <div class="user-img">
+                    <img src="{% static 'images/PTIT.png' %}" alt="">
+                </div>
+                <div class="user-details">
+                    {%if user.username %}
+                        <p class="title"> Xin chào </p>
+                        <p class="name"> {{user.username}} </p>
+                    {%endif%}
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <p class="title">Main</p>
+                    <ul>
+                        <li class="active">
+                            <a href="/">
+                                <i class="icon ph-bold ph-house"></i>
+                                <span class="text">Trang Chủ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon ph-bold ph-truck"></i>
+                                <span class="text">Đơn Hàng</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu" >
+                                <li>
+                                    <a href="/order">
+                                        <span class="text">Tất Cả</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Hàng Hoàn</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="#">
+                                <i class="icon ph-bold ph-chart-bar"></i>
+                                <span class="text">Sản Phẩm</span>
+                                <i class="arrow ph-bold ph-caret-down"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li >
+                                    <a href="/product">
+                                        <span class="text">Tất Cả</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Tồn Kho</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">Nhập Xuất</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/guide">
+                                <i class="icon ph-bold ph-file-text"></i>
+                                <span class="text">Hướng Dẫn </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="/contact">
+                                <i class="icon ph-bold ph-phone"></i>
+                                <span class="text">Liên Hệ</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer class="footer" >
+                <p class="title">ACCOUNT</p>
+                {%if user.username %}
+                    <a href="{% url 'logout' %}">
+                        <i class="icon ph-bold ph-sign-out"></i>
+                        <span class="text">Đăng Xuất</span>
+                    </a>
+                {%else %}
+                    <ul>
+                        <li >
+                            <a href="{% url 'login' %}">
+                                <i class="icon ph-bold ph-sign-in"></i>
+                                <span class="text">Đăng Nhập</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'get_register' %}">
+                                <i class="icon ph-bold ph-user-plus"></i>
+                                <span class="text">Đăng Kí</span>
+                            </a>
+                        </li>
+                    </ul>
+                {%endif%}
+            </footer>    
+        </div>
+        <!--Kết thúc phần slidebar-->
+
+        <!--Bắt đầu phần search-->
+        <div class="search">
+            <form class="d-flex" role="search">
+                <input 
+                    class="form-control me-2" 
+                    type="search" 
+                    placeholder="Search" 
+                    aria-label="Search"
+                >
+                <button class="btn btn-outline-success" type="submit"> Search </button>
+            </form>            
+        </div>
+        <!--Kết thúc phần search-->
+
+        <!--Bắt đầu phần content-->
+        <div class="content">
+                {% block content %}
+
+                {% endblock %}
+        </div>
+        <!--Kết thúc phần content-->
+
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
+      integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/base.js' %}"></script>
+  </body>
+</html>

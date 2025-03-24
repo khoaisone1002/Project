@@ -1,0 +1,56 @@
+{% extends "page1/base.html" %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/contact1.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <h2>📞 Liên Hệ</h2>
+
+    <div class="contact-info">
+        <p>Nếu bạn cần hỗ trợ hoặc có thắc mắc, vui lòng liên hệ qua các phương thức sau:</p>
+        
+        <ul>
+            <li>📧 Email: <a href="mailto:duong0946688665@gmail.com">duong0946688665@gmail.com</a></li>
+            <li>☎️ Hotline: <strong>0946 688 665</strong></li>
+            <li>📍 Địa chỉ: <strong>96A Đ. Trần Phú, P. Mộ Lao, Hà Đông, Hà Nội, Việt Nam</strong></li>
+        </ul>
+
+        <h3>🕒 Thời Gian Hỗ Trợ</h3>
+        <p><strong>Thứ 2 - Thứ 7:</strong> 8:00 - 18:00</p>
+        <p><strong>Chủ Nhật & Ngày Lễ:</strong> Nghỉ</p>
+    </div>
+
+    <div class="contact-form">
+        <h3>✉️ Gửi Tin Nhắn</h3>
+        <form>
+            <label for="name">Họ và Tên:</label>
+            <input type="text" id="name" placeholder="Nhập họ và tên" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Nhập email" required>
+
+            <label for="message">Nội Dung:</label>
+            <textarea id="message" rows="4" placeholder="Nhập nội dung cần hỗ trợ..." required></textarea>
+
+            <button type="submit">Gửi</button>
+        </form>
+    </div>
+    <div class="map-container">
+        <h3>📍 Bản Đồ</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.7731668779847!2d105.78484157507951!3d20.980912980656417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e1!3m2!1svi!2s!4v1742368829267!5m2!1svi!2s" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+{% endblock  %}
